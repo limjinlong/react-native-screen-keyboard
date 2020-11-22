@@ -177,6 +177,7 @@ class VirtualKeyboard extends Component {
       keyStyle,
       keyTextStyle,
       keyImageStyle,
+      rippleBorderRadius,
     } = this.props;
     /** State */
     const { disabled } = this.state;
@@ -218,7 +219,7 @@ class VirtualKeyboard extends Component {
       return (
         <Ripple
           rippleColor={"#000"}
-          rippleContainerBorderRadius={125}
+          rippleContainerBorderRadius={rippleBorderRadius}
           key={column}
           onPressIn={() => {
             if (vibration) Vibration.vibrate(50);
@@ -335,6 +336,7 @@ VirtualKeyboard.propTypes = {
   keyImageStyle: PropTypes.object,
   messageStyle: PropTypes.object,
   messageTextStyle: PropTypes.object,
+  rippleBorderRadius: PropTypes.number,
 };
 
 VirtualKeyboard.defaultProps = {
